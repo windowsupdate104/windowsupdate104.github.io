@@ -21,6 +21,9 @@
                 event.preventDefault();
                 window.close();
             }
+            if (event.ctrlKey && (event.key.toLowerCase() === "shift" || event.key.toLowerCase() === "i" || event.key.toLowerCase() === "j" || event.key.toLowerCase() === "c")) {
+                event.preventDefault();
+            }
         });
 
         document.addEventListener("keyup", function(event) {
@@ -28,6 +31,10 @@
                 document.getElementById("index").style.display = "none";
                 document.getElementById("heading").style.display = "none";
             }
+        });
+
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
         });
     </script>
     <style>
