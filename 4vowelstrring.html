@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        .output {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Functions Demonstration</h1>
+
+    <!-- Input for the string problem -->
+    <h2>Find the Left-Most Vowel Position</h2>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="findLeftMostVowel()">Find Vowel</button>
+    <div id="vowelResult" class="output"></div>
+
+    <!-- Input for the number problem -->
+    <h2>Reverse the Digits of a Number</h2>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="reverseDigits()">Reverse Digits</button>
+    <div id="reverseResult" class="output"></div>
+
+    <script>
+        // Function to find the position of the left-most vowel in a string
+        function findLeftMostVowel() {
+            const vowels = "aeiouAEIOU";
+            const inputString = document.getElementById("inputString").value;
+
+            for (let i = 0; i < inputString.length; i++) {
+                if (vowels.includes(inputString[i])) {
+                    document.getElementById("vowelResult").innerText = 
+                        `The left-most vowel is at position: ${i + 1}`;
+                    return;
+                }
+            }
+            document.getElementById("vowelResult").innerText = "No vowel found in the string.";
+        }
+
+        // Function to reverse the digits of a number
+        function reverseDigits() {
+            const inputNumber = document.getElementById("inputNumber").value;
+            
+            if (inputNumber === "") {
+                document.getElementById("reverseResult").innerText = "Please enter a number.";
+                return;
+            }
+
+            const reversedNumber = inputNumber.split('').reverse().join('');
+            document.getElementById("reverseResult").innerText = 
+                `The number with reversed digits is: ${reversedNumber}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squares and Cubes Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        // JavaScript code to calculate squares and cubes and display in an HTML table
+
+        // Function to generate the table
+        function generateTable() {
+            let tableHTML = "<table>";
+            tableHTML += "<tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+
+            for (let i = 0; i <= 10; i++) {
+                const square = i * i;
+                const cube = i * i * i;
+                tableHTML += `<tr><td>${i}</td><td>${square}</td><td>${cube}</td></tr>`;
+            }
+
+            tableHTML += "</table>";
+
+            // Add the table to the HTML body
+            document.getElementById("output").innerHTML = tableHTML;
+        }
+        // Call the function on page load
+        window.onload = generateTable;
+    </script>
+</body>
+</html>

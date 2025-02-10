@@ -1,0 +1,85 @@
+Code:
+Student.xml file:
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<students>
+    <student>
+        <usn>1VT21CS001</usn>
+        <name>Radhya Sharma</name>
+        <college>Visvesvaraya Institute of Technology</college>
+        <branch>Computer Science</branch>
+        <year_of_joining>2021</year_of_joining>
+        <email>radhya.sharma@vtu.edu</email>
+    </student>
+    <student>
+        <usn>1VT21EC002</usn>
+        <name>Arjun Rao</name>
+        <college>Basaveshwara College of Engineering</college>
+        <branch>Electronics and Communication</branch>
+        <year_of_joining>2021</year_of_joining>
+        <email>arjun.rao@vtu.edu</email>
+    </student>
+    <student>
+        <usn>1VT21ME003</usn>
+        <name>Sanya Kulkarni</name>
+        <college>RV College of Engineering</college>
+        <branch>Mechanical Engineering</branch>
+        <year_of_joining>2021</year_of_joining>
+        <email>sanya.kulkarni@vtu.edu</email>
+    </student>
+</students>
+ 
+Style.css:
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+}
+students {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+student {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+student:last-child {
+    border-bottom: none;
+}
+usn, name, college, branch, year_of_joining, email {
+    display: block;
+    margin: 5px 0;
+}
+usn {
+    font-weight: bold;
+    color: #0056b3;
+}
+name {
+    font-size: 1.2em;
+    color: #333;
+}
+college {
+    color: #666;
+}
+branch {
+    font-style: italic;
+    color: #555;
+}
+year_of_joining {
+    color: #888;
+}
+email {
+    color: #007b5e;
+    text-decoration: none;
+}
+
