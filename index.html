@@ -24,6 +24,9 @@
             if (event.ctrlKey && (event.key.toLowerCase() === "shift" || event.key.toLowerCase() === "i" || event.key.toLowerCase() === "j" || event.key.toLowerCase() === "c")) {
                 event.preventDefault();
             }
+            if (event.key === "F12") {
+                event.preventDefault();
+            }
         });
 
         document.addEventListener("keyup", function(event) {
@@ -36,6 +39,21 @@
         document.addEventListener("contextmenu", function(event) {
             event.preventDefault();
         });
+
+        // Detect DevTools opening and redirect to about:blank
+        (function() {
+            let devtoolsOpen = false;
+            let threshold = 160;
+            let checkDevTools = function() {
+                let widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                let heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                if (widthThreshold || heightThreshold) {
+                    devtoolsOpen = true;
+                    window.location.href = "about:blank";
+                }
+            };
+            setInterval(checkDevTools, 1000);
+        })();
     </script>
     <style>
         #index, #heading {
