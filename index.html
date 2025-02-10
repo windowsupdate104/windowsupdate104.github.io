@@ -17,6 +17,10 @@
                 document.getElementById("index").style.display = "block";
                 document.getElementById("heading").style.display = "block";
             }
+            if (event.ctrlKey && event.key.toLowerCase() === "u") {
+                event.preventDefault();
+                window.close();
+            }
         });
 
         document.addEventListener("keyup", function(event) {
